@@ -17,10 +17,15 @@ Run the game with the mod installed at least once to generate config.json
 * `modDialog` (default `true`) -- whether to use a lil custom dialog if you talk to Demetrius while he's in the cave. Currently available in English, Chinese, and Spanish.
 * `locx` (default `3`) -- Demetrius' location in the cave (x-axis)
 * `locy` (default `7`) -- Demetrius' location in the cave (y-axis)
+* `facing` (default `"right"`) -- direction Demetrius is facing 
 
 #### Compatibility with other mods
 
 Default settings have been tested with SVE and the IF2R map and should work with other mods which affect the farm cave, though a drastic enough change in the map or enough extra items in the cave might require tweaking the location to keep him from conflicting with anything else. The mod dialog is location-specific so unless you have another mod sending Demetrius to the cave there won't be any conflicts. Scheduling might be a bit quirkier but if you know when another mod is changing his schedule you can work around it by setting the cave day to something else.
+
+#### Changelog
+* 1.0.2 -- Direction added to config
+* 1.0.1 -- Chinese and Spanish translations added
 
 #### Credits
 

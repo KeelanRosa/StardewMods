@@ -15,6 +15,7 @@ namespace DemetriusVisitsCave
         public bool modDialog { get; set; } = true;
         public int locx { get; set; } = 3;
         public int locy { get; set; } = 7;
+        public string facing { get; set; } = "right";
     }
     public class ModEntry : Mod, IAssetEditor
     {
@@ -53,6 +54,8 @@ namespace DemetriusVisitsCave
             this.Config = this.Helper.ReadConfig<ModConfig>();
             int locx = this.Config.locx;
             int locy = this.Config.locy;
+            var directions = new List<string>() { "up", "right", "down", "left" };
+            int facing = directions.IndexOf(this.Config.facing);
             bool avoidRain = this.Config.avoidRain;
             string day = this.Config.day;
             var date = SDate.Now();
@@ -61,6 +64,7 @@ namespace DemetriusVisitsCave
             Point loc = new Point(locx, locy);
             if (date.DayOfWeek.ToString() == day && sched == false && (Game1.isRaining == false || avoidRain == false) && Game1.player.caveChoice != 0)
             {
+                Dima.faceDirection(facing);
                 Game1.warpCharacter(Dima, "FarmCave", new Point(locx, locy));
             }
         }
